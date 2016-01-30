@@ -14,9 +14,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class UsersBoxWidget extends WP_Widget {
 
-	/**
-	 * Sets up the widgets name etc
-	 */
 	public function __construct() {
 		$widget_ops = array( 
 			'class_name' => 'usersboxwidget',
@@ -27,12 +24,6 @@ class UsersBoxWidget extends WP_Widget {
 		add_action('wp_enqueue_scripts',  array(&$this, '_enqueue_scripts'), 0);
 	}
 
-	/**
-	 * Outputs the content of the widget
-	 *
-	 * @param array $args
-	 * @param array $instance
-	 */
 	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 10;
