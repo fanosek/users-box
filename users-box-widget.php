@@ -40,7 +40,6 @@ class UsersBoxWidget extends WP_Widget {
 			$number = 10;
 		}
 		$shape = isset( $instance['shape'] ) ? $instance['shape'] : 'circle';
-		$clickable_avatars = ! empty( $instance['clickable_avatars'] ) ? '1' : '0';
 
 		echo $args['before_widget'];
 
@@ -51,7 +50,7 @@ class UsersBoxWidget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		$this->_get_users( $number, $shape, $clickable_avatars );
+		$this->_get_users( $number, $shape );
 
 		echo $args['after_widget'];
 	}
@@ -62,8 +61,6 @@ class UsersBoxWidget extends WP_Widget {
 			$title_url = $instance['title_url'];
 			$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 10;
 			$shape = isset( $instance['shape'] ) ? $instance['shape'] : 'circle';
-			$clickable_avatars = isset( $instance['clickable_avatars'] ) ? (bool) $instance['clickable_avatars'] : false;
-
 	?>
 			<p>
 				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
@@ -87,11 +84,6 @@ class UsersBoxWidget extends WP_Widget {
 					<option value="rectangle" <?php echo "rectangle" == $shape ? "selected" : ""; ?> ><?php _e('Rectangle'); ?></option>
 				</select>
 			</p>
-
-			<p>
-				<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('clickable_avatars'); ?>" name="<?php echo $this->get_field_name('clickable_avatars'); ?>"<?php checked( $clickable_avatars ); ?> />
-				<label for="<?php echo $this->get_field_id('clickable_avatars'); ?>"><?php _e( 'Clickable avatars' ); ?></label></p>
-			</p>
 	<?php
 	}
 
@@ -103,12 +95,11 @@ class UsersBoxWidget extends WP_Widget {
 		$instance['title_url'] = strip_tags($new_instance['title_url']);
 		$instance['number'] = absint( $new_instance['number'] );
 		$instance['shape'] = ( ! empty( $new_instance['shape'] ) ) ? strip_tags( $new_instance['shape'] ) : 'circle';
-		$instance['clickable_avatars'] = !empty($new_instance['clickable_avatars']) ? 1 : 0;
 
 		return $instance;
 	}
 
-	public function _get_users( $count, $shape, $clickable_avatars ) {
+	public function _get_users( $count, $shape ) {
 		$count = intval($count);
 		global $wpdb;
 
@@ -124,19 +115,11 @@ class UsersBoxWidget extends WP_Widget {
 			LIMIT $count"
 		);
 
-		$users[] = $users[0];
-		$users[] = $users[0];
-		$users[] = $users[0];
-		$users[] = $users[0];
-
 		foreach ( $users as $id ) {
 			?>
 			<div class="ubw-users-box">
 				<div class="ubw-user ubw-shape-<?php echo $shape ?>">
-					<?php if ( $clickable_avatars ) echo '<a href="' . the_author_meta( 'user_url', $id ) . '">' ?>
 					<?php echo get_avatar( $id, 40 ); ?>
-					<?php if ( $clickable_avatars ) echo '</a>' ?>
-
 				</div>
 			</div>
 			<?php
