@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Users Box Widget
-Plugin URI:  http://www.ivansevcik.cz/users-box-widget
-Description: Displays a box with a random user avatars
+Plugin Name: User Box
+Plugin URI:  http://www.ivansevcik.cz/user-box-wordpress-plugin/
+Description: Display a box with a random user avatars.
 Version:     1.0
 Author:      Ivan Sevcik
-Author URI:  http://www.ivansevcik.cz/users-box-widget
+Author URI:  http://www.ivansevcik.cz/user-box-wordpress-plugin/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -17,7 +17,7 @@ class UsersBoxWidget extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array( 
 			'class_name' => 'usersboxwidget',
-			'description' => 'Displays a box with a random user avatars.',
+			'description' => 'Display a box with a random user avatars.',
 		);
 		parent::__construct( 'usersboxwidget', 'Users Box Widget', $widget_ops );
 
@@ -103,7 +103,7 @@ class UsersBoxWidget extends WP_Widget {
 							(SELECT MAX(ID)
 								FROM $wpdb->users)) AS ID)
 					AS r2
-				WHERE r1.ID >= r2.ID
+				WHERE ( r1.ID + $count ) >= r2.ID
 				ORDER BY r1.id ASC
 				LIMIT $count) r
 			ORDER BY RAND()"
