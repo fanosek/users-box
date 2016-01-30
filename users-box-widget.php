@@ -109,7 +109,7 @@ class UsersBoxWidget extends WP_Widget {
 		foreach ( $users as $id ) {
 			?>
 			<div class="ubw-users-box">
-				<div class="ubw-user ubw-shape-<?php echo $shape ?>">
+				<div class="ubw-user ubw-shape-<?php echo $shape ?>" title="<?php the_author_meta( 'user_login', $id ) ?>">
 					<?php echo get_avatar( $id, 40 ); ?>
 				</div>
 			</div>
