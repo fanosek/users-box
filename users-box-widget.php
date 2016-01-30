@@ -92,18 +92,21 @@ class UsersBoxWidget extends WP_Widget {
 
 	public function _get_users( $count, $shape ) {
 		$count = intval($count);
+		if ( $count > 500 ) $count = 500;
 		global $wpdb;
 
 		$users = $wpdb->get_col( "
-			SELECT r1.ID
-				FROM $wpdb->users AS r1 JOIN
-					(SELECT CEIL(RAND() *
-						(SELECT MAX(ID)
-							FROM $wpdb->users)) AS ID)
-				AS r2
-			WHERE r1.ID >= r2.ID
-			ORDER BY r1.ID ASC
-			LIMIT $count"
+			SELECT * FROM
+				(SELECT r1.ID
+					FROM $wpdb->users AS r1 JOIN
+						(SELECT CEIL(RAND() *
+							(SELECT MAX(ID)
+								FROM $wpdb->users)) AS ID)
+					AS r2
+				WHERE r1.ID >= r2.ID
+				ORDER BY r1.id ASC
+				LIMIT $count) r
+			ORDER BY RAND()"
 		);
 
 		foreach ( $users as $id ) {
