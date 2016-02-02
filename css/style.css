@@ -1,0 +1,28 @@
+.ubw-users-box {
+	margin: 0 auto;
+}
+
+.ubw-user {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 3px;
+	overflow: hidden;
+}
+
+.ubw-shape-circle img {
+	border-radius: 50% !important;
+}
+
+.ubw-shape-rectangle img {
+	border-radius: 3px !important;
+}
+
+.ubw-user a,
+.ubw-user img {
+	display: block;
+	overflow: hidden;
+	max-width: 40px;
+	max-height: 40px;
+	height: auto !important;
+}
