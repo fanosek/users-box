@@ -19,7 +19,7 @@ class UsersBoxWidget extends WP_Widget {
 			'class_name' => 'usersboxwidget',
 			'description' => 'Display a box with a random user avatars.',
 		);
-		parent::__construct( 'usersboxwidget', 'Users Box Widget', $widget_ops );
+		parent::__construct( 'usersboxwidget', 'User Box Widget', $widget_ops );
 
 		add_action('wp_enqueue_scripts',  array(&$this, '_enqueue_scripts'), 0);
 	}

@@ -4,7 +4,7 @@ Donate link: http://www.ivansevcik.cz/contact/
 Tags: users, box, widget, authors, avatars
 Requires at least: 2.5.0
 Tested up to: 4.4.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Plugin provides a widget for displaying avatars of registered users.
 
 == Description ==
 
-Plugin add new widget Users Box Widget. Widget shows registered user avatars in a box in similar way
+Plugin add new widget User Box Widget. Widget shows registered user avatars in a box in similar way
 like facebook like box does.
 You can tune widget with these options:
 
