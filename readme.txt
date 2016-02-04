@@ -1,7 +1,7 @@
 === User Box ===
 Contributors: isevcik
 Donate link: http://www.ivansevcik.cz/contact/
-Tags: users, box, widget, authors, avatars
+Tags: user, users, box, widget, authors, avatar, avatars, user box, member, members
 Requires at least: 2.5.0
 Tested up to: 4.4.1
 Stable tag: 1.0.3
