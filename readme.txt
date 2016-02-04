@@ -4,7 +4,7 @@ Donate link: http://www.ivansevcik.cz/contact/
 Tags: user, users, box, widget, authors, avatar, avatars, user box, member, members
 Requires at least: 2.5.0
 Tested up to: 4.4.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

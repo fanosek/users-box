@@ -3,7 +3,7 @@
 Plugin Name: User Box
 Plugin URI:  http://www.ivansevcik.cz/user-box-wordpress-plugin/
 Description: Display a box with a random user avatars.
-Version:     1.0
+Version:     1.0.4
 Author:      Ivan Sevcik
 Author URI:  http://www.ivansevcik.cz/user-box-wordpress-plugin/
 License:     GPL2
