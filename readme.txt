@@ -28,6 +28,10 @@ If you have any problems or question contact me on http://www.ivansevcik.cz/user
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Now you can use User Box Widget where you want and setup widget options
 
+== Screenshots ==
+
+1. User Box Widget variants: You can choose a shape of the avatars from circle or square.
+
 == Changelog ==
 
 = 1.0 =
